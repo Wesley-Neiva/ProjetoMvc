@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SalesWebMvc.Services.Exception;
 using SalesWebMvc.Controllers;
+using IntegrityException = SalesWebMvc.Controllers.IntegrityException;
 
 namespace SalesWebMvc.Services
 {
@@ -44,7 +45,7 @@ namespace SalesWebMvc.Services
             }
             catch (DbUpdateException e)
             {
-                throw new IntegrityException("Can't delete seller because he/she has sales");
+                throw new IntegrityException("Can´t delete seller because he/she has seles");
             }
         }
 
